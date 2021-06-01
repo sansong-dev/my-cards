@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {countries} from './countries-list'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  gridColumns = 3;
+  countries = countries;
+  gridColumns = 4;
 }

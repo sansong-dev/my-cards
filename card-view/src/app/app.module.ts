@@ -10,10 +10,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {IcardComponent} from "./components/icard/icard.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IcardComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import {FormsModule} from "@angular/forms";
     FlexLayoutModule,
     MatSliderModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

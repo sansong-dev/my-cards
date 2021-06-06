@@ -12,6 +12,8 @@ import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {IcardComponent} from "./components/icard/icard.component";
+import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
+import {ShareIconsModule} from "ngx-sharebuttons/icons";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,11 @@ import {IcardComponent} from "./components/icard/icard.component";
     FlexLayoutModule,
     MatSliderModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ShareButtonsModule.withConfig({
+      debug: true
+    }),
+    ShareIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

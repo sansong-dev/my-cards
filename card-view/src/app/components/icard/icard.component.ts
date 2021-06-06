@@ -4,11 +4,10 @@ import {HttpClient} from "@angular/common/http";
 @Component({
   selector: 'app-icard',
   templateUrl: './icard.component.html',
-  styleUrls: ['./icard.component.css']
+  styleUrls: ['./icard.component.scss']
 })
 
 export class IcardComponent implements OnInit {
-
   gridColumns = 4;
   countries: Country[];
 

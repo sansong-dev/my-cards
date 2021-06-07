@@ -4,11 +4,10 @@ import {HttpClient} from "@angular/common/http";
 @Component({
   selector: 'app-icard',
   templateUrl: './icard.component.html',
-  styleUrls: ['./icard.component.css']
+  styleUrls: ['./icard.component.scss']
 })
 
 export class IcardComponent implements OnInit {
-
   gridColumns = 4;
   countries: Country[];
 
@@ -22,7 +21,7 @@ export class IcardComponent implements OnInit {
   }
 
   getCountries() {
-    this.httpClient.get<any>('http://api.worldbank.org/v2/country?format=json&region=SSA&per_page=300').subscribe(
+    this.httpClient.get<any>('https://api.worldbank.org/v2/country?format=json&region=SSA&per_page=300').subscribe(
       response => {
         console.log(response[1]);
         this.countries = response[1];

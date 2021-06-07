@@ -1,7 +1,7 @@
 <div class="content" xmlns:object-fit="http://www.w3.org/1999/xhtml">
   <div fxHide.lt-md>
     <span class="column-label">Display columns</span>
-    <mat-slider [max]="6" [min]="3" [(ngModel)]="gridColumns" [thumbLabel]="true">
+    <mat-slider [max]="5" [min]="1" [(ngModel)]="gridColumns" [thumbLabel]="true">
     </mat-slider>
   </div>
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
@@ -10,16 +10,22 @@
         <mat-card-header>
           <mat-card-title>{{country.name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="assets/images/{{country.iso2Code.toLowerCase()}}.gif">
+        <img mat-card-image src="assets/images/{{country.iso2Code.toLowerCase()}}.gif" alt="Falg of {{country.name}}">
         <mat-card-content>
           <p>
             <b>Capital city:</b> {{country.capitalCity}}
           </p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
+
+          <share-buttons [theme]="'modern-light'"
+                         [include]="['facebook','twitter','whatsapp','linkedin','pinterest','email','copy']"
+                         [show]="3"
+                         [size]="-3"
+                         [url]="'https://sansong-dev.github.io/my-cards/'"
+                         [image] ="'https://sansong-dev.github.io/my-cards/assets/images/'+country.iso2Code.toLowerCase()+'.gif'"
+                         [autoSetMeta]="true"
+          ></share-buttons>
+
       </mat-card>
     </div>
   </div>

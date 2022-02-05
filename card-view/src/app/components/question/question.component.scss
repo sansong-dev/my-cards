@@ -1,0 +1,33 @@
+h1 {
+  color: #000;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-card {
+  display: table-cell;
+  margin: 0px;
+  height: 400px;
+  width: 380px;
+  min-height: 300px;
+  min-width: 280px;
+}
+
+mat-card-title {
+  color: #000;
+  text-align: left;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+mat-card-content {
+  color: #000;
+  text-align: left;
+  padding: 30px;
+  font-size: 20px;
+}

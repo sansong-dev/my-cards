@@ -1,0 +1,21 @@
+<div *ngIf="!quizOver">
+  <app-question [questionIndex]="currentIndex"
+                (disable)="disableNext($event)"
+                (answers)="receiveAnswers($event)"
+                (totalQuestions)="getTotalQuestions($event)">
+  </app-question>
+
+  <br>
+  <div class="button-container" align="right">
+<!--    <button mat-raised-button color="primary" (click)="goPrevious() ">Previous</button>-->
+    <button mat-raised-button [disabled]=isDisableNext color="primary" (click)="goNext()">Next</button>
+  </div>
+
+  <div *ngIf="quizOver" class="border">
+    <h4>Quiz is Over!</h4>
+    Your score is {{score}} / {{totalQuestions}}
+    <br>
+    <button (click)="restartQuiz()">Retake Quiz</button>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<div align="center">
+  <h4>Question {{questionIndex + 1}} of {{questions.length}}</h4></div>
+<br>
+
+<div class="card-container" align="center">
+  <mat-card class="mat-elevation-z4">
+    <mat-card-title>
+      {{currentQuestion}}
+    </mat-card-title>
+
+    <mat-card-content>
+      <p *ngFor="let option of currentOptions">
+        <input
+          (click)="setUserAnswer(option)"
+          type="radio"
+          value={{option}}
+          name="answer"
+          (change)="enableNextButton($event)"> {{option}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

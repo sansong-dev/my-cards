@@ -11,13 +11,18 @@ export class IcardComponent implements OnInit {
   gridColumns = 4;
   countries: Country[];
 
+  showDiv = {
+    cardAnswer : true,
+    current : false,
+    next : false
+  };
+
   constructor(
     private httpClient: HttpClient
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.getCountries()
+    this.getCountries();
   }
 
   getCountries() {

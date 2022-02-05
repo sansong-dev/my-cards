@@ -14,28 +14,34 @@ import {HttpClientModule} from "@angular/common/http";
 import {IcardComponent} from "./components/icard/icard.component";
 import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
+import {MatTabsModule} from "@angular/material/tabs";
+import {QuizComponent} from "./components/quiz/quiz.component";
+import {QuestionComponent} from "./components/question/question.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     IcardComponent,
+    QuizComponent,
+    QuestionComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatSliderModule,
-    FormsModule,
-    HttpClientModule,
-    ShareButtonsModule.withConfig({
-      debug: true
-    }),
-    ShareIconsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        MatSliderModule,
+        FormsModule,
+        HttpClientModule,
+        ShareButtonsModule.withConfig({
+            debug: true
+        }),
+        ShareIconsModule,
+        MatTabsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -6,27 +6,25 @@
   </div>
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
     <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let country of countries">
-      <mat-card class="mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title>{{country.name}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="assets/images/{{country.iso2Code.toLowerCase()}}.gif" alt="Falg of {{country.name}}">
-        <mat-card-content>
-          <p>
-            <b>Capital city:</b> {{country.capitalCity}}
-          </p>
-        </mat-card-content>
 
-          <share-buttons [theme]="'modern-light'"
-                         [include]="['facebook','twitter','whatsapp','linkedin','pinterest','email','copy']"
-                         [show]="3"
-                         [size]="-3"
-                         [url]="'https://sansong-dev.github.io/my-cards/'"
-                         [image] ="'https://sansong-dev.github.io/my-cards/assets/images/'+country.iso2Code.toLowerCase()+'.gif'"
-                         [autoSetMeta]="true"
-          ></share-buttons>
+      <mat-card class="mat-elevation-z4" (click)="showDiv.cardAnswer = !showDiv.cardAnswer"  >
+          <mat-card-header>
+            <mat-card-title>{{country.name}}</mat-card-title>
+          </mat-card-header>
+        <div id=toggle *ngIf="showDiv.cardAnswer">>
+
+          <img mat-card-image src="assets/images/{{country.iso2Code.toLowerCase()}}.gif" alt="Flag of {{country.name}}" >
+
+
+          <mat-card-content>
+            <p>
+              <b>Capital city:</b> {{country.capitalCity}}
+            </p>
+          </mat-card-content>
+        </div>
 
       </mat-card>
+
     </div>
   </div>
 </div>

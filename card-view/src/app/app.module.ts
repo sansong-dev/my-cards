@@ -17,6 +17,7 @@ import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {MatTabsModule} from "@angular/material/tabs";
 import {QuizComponent} from "./components/quiz/quiz.component";
 import {QuestionComponent} from "./components/question/question.component";
+import {QuizGameComponent} from "./components/quizgame/quizgame.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {QuestionComponent} from "./components/question/question.component";
     IcardComponent,
     QuizComponent,
     QuestionComponent,
+    QuizGameComponent
   ],
     imports: [
         BrowserModule,

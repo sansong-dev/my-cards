@@ -1,0 +1,45 @@
+<div class="well col-md-12">
+  <div class="col-md-4" *ngIf="start">
+    <h3 align="center"> Question {{currentIndex + 1}} of {{questions.length}}</h3>
+  </div>
+
+  <div *ngIf="start">
+    <div class="card-container" align="center" margin="5">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-title>
+          {{currentQuestionSet.question}}
+        </mat-card-title>
+        <mat-card-content>
+          <p *ngFor="let option of currentQuestionSet.option">
+            <input type="radio" name="{{currentQuestionSet.id}}" value="{{option.optionId}}"
+                   [(ngModel)]="currentQuestionSet.selected"/>{{option.name}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+  <div class="button-container" align="center" *ngIf="start">
+    <button mat-raised-button
+            color="primary" *ngIf="isNextDisplayed()" [disabled]="isNextDisabled()" (click)="next()">Next
+    </button>
+    <button mat-raised-button
+            color="warn" *ngIf="!isNextDisplayed()" [disabled]="isSubmitDisabled()" (click)="submit()">Submit
+    </button>
+    <button mat-raised-button
+            color="primary" [disabled]="isPrevDisabled()" (click)="previous()">Previous
+    </button>
+  </div>
+  <div *ngIf="!start" align="center">
+    <br>
+    <br>
+    TYKOA - Test Your Knowledge on Africa
+    <br>
+    <br>
+    <button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz </button>
+  </div>
+
+  <div *ngIf="gameover"><h5>Result:  {{correct}}/{{questions.length}}</h5></div>
+</div>

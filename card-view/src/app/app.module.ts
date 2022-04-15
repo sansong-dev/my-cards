@@ -11,7 +11,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import {IcardComponent} from "./components/icard/icard.component";
 import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {MatTabsModule} from "@angular/material/tabs";
@@ -22,7 +21,6 @@ import {QuizGameComponent} from "./components/quizgame/quizgame.component";
 @NgModule({
   declarations: [
     AppComponent,
-    IcardComponent,
     QuizComponent,
     QuestionComponent,
     QuizGameComponent
